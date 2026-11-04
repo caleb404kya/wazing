@@ -6,6 +6,7 @@
 <title>Wazing Ushering &amp; Event Support Team | Ushers in Kenya</title>
 <meta name="description" content="Professional ushers in Kenya for weddings, funerals, corporate events, birthdays and any gathering, small or big. Excellence in order, warmth and professionalism.">
 <meta name="keywords" content="ushers in Kenya, event ushers Kenya, wedding ushers Kenya, funeral ushers Kenya, corporate event ushers Kenya">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("wz-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="icon" type="image/png" href="images/wazing-logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,12 +15,15 @@
 <body>
 <header>
  <div class="wrap">
-  <a class="logo" href="#top"><img src="images/wazing-logo.png" alt="Wazing logo" height="36">Wazing</a>
-  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <div class="hleft">
+   <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+   <button class="themebtn" id="theme" type="button" aria-label="Switch to dark mode"></button>
+  </div>
   <nav id="nav">
-   <a href="#" onclick="document.getElementById('nav').classList.remove('open'); document.querySelector('#menu').setAttribute('aria-expanded', 'false')">Home</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#about">About</a><a href="#join">Join us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-   <a class="btn gold" href="#book" style="color:#1c1400;padding:9px 18px">Book ushers</a>
+   <a href="#top">Home</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#about">About</a><a href="#join">Join us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+   <a class="btn gold" href="#book" style="color:#1c1400;padding:9px 18px">Book team</a>
   </nav>
+  <a class="logo" href="#top"><img src="images/wazing-logo.png" alt="Wazing logo" height="36">Wazing</a>
  </div>
 </header>
 
@@ -30,17 +34,7 @@
    <span class="motto">Excellence in order, warmth and professionalism</span>
    <h1>Ushers in Kenya who keep your event running smoothly.</h1>
    <p class="lead">Wazing Ushering &amp; Event Support Team provides trained, well-dressed ushers for every gathering, from a small birthday to a large wedding, funeral or corporate conference.</p>
-   <div class="cta"><a class="btn" href="#book">Book your team</a><a class="btn ghost" href="#services">See services and prices</a></div>
-  </div>
-  <div class="card quote" aria-labelledby="qt">
-   <h3 id="qt">Get a quick estimate</h3>
-   <div class="opts" id="opts" role="radiogroup" aria-label="Package"></div>
-   <div class="row" id="hoursRow" hidden><span>Hours (minimum 2)</span>
-    <div class="step"><button type="button" id="minus" aria-label="Fewer hours">&minus;</button><strong id="hours">2</strong><button type="button" id="plus" aria-label="More hours">+</button></div></div>
-   <label class="row" style="cursor:pointer"><span>Booking one month or more ahead</span><input type="checkbox" id="early"></label>
-   <div class="total"><span>Estimated total</span><strong id="total">Ksh 10,000</strong></div>
-   <p class="note" id="saving">Prices are a guide and can be adjusted to fit your budget.</p>
-   <a class="btn gold" href="#book" id="goBook" style="width:100%;text-align:center">Continue to booking</a>
+   <div class="cta"><a class="btn" href="#book">Book team</a><a class="btn ghost" href="#services">Our services</a></div>
   </div>
  </div>
 </section>
@@ -51,6 +45,24 @@
   <p class="lead">We serve all events and gatherings, small to big. Pick an occasion to see what we offer.</p>
   <div class="chips" id="chips" role="group" aria-label="Filter services"></div>
   <div class="services" id="svcs"></div>
+ </div>
+</section>
+
+<section id="estimate">
+ <div class="wrap">
+  <h2>Your estimate</h2>
+  <p class="lead">Select a service above and its price appears here before you book. You can also change the service below.</p>
+   <div class="card quote" aria-labelledby="qt">
+    <h3 id="qt">Get a quick estimate</h3>
+    <div class="opts" id="opts" role="radiogroup" aria-label="Package"></div>
+    <div class="row" id="hoursRow" hidden><span>Hours (minimum 2)</span>
+     <div class="step"><button type="button" id="minus" aria-label="Fewer hours">&minus;</button><strong id="hours">2</strong><button type="button" id="plus" aria-label="More hours">+</button></div></div>
+    <label class="row" style="cursor:pointer"><span>Booking one month or more ahead</span><input type="checkbox" id="early"></label>
+    <div class="total"><span>Estimated total</span><strong id="total">Ksh 10,000</strong></div>
+    <p class="note" id="saving">Prices are a guide and can be adjusted to fit your budget.</p>
+    <a class="btn gold" href="#book" id="goBook" style="width:100%;text-align:center">Continue to booking</a>
+   </div>
+ 
  </div>
 </section>
 
@@ -91,7 +103,7 @@
   <div>
    <h2>Rewards for loyal clients</h2>
    <p class="lead">Refer a friend and earn points you can redeem for future discounts. Book at least a month ahead and enjoy an early booking discount. We may also help you organise your event location.</p>
-   <p class="note" style="color:inherit;opacity:.8">Referral points and early booking offers are planned features. The estimate above shows how the early discount could work.</p>
+   <p class="note" style="color:inherit;opacity:.8">Referral points and early booking offers are planned features. The estimator on this page shows how the early discount could work.</p>
   </div>
   <div class="org" aria-label="Team structure">
    <div>Team Director<small>Leadership and direction</small></div>
@@ -157,7 +169,7 @@
   <details><summary>Are the prices fixed?</summary><p>No. The prices shown are a guide and can be adjusted to suit your budget and request.</p></details>
   <details><summary>Do you only do weddings, funerals, corporate events and birthdays?</summary><p>Those are our main events, but we work at any occasion and follow the directions of the event owner.</p></details>
   <details><summary>Do you offer errand running?</summary><p>It is coming soon, mainly staffed by university students. Tell us if you are interested and we will share rates when it launches.</p></details>
-  <details><summary>Where do you work?</summary><p>We are based in Kyumbi, Machakos, and serve clients across Kenya.</p></details>
+  <details><summary>Where do you work?</summary><p>We are flexible and we offer our services to you wherever you are.</p></details>
  </div>
 </section>
 

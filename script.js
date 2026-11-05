@@ -101,7 +101,15 @@ paintTheme();
 var secs=document.querySelectorAll("main section:not(.hero)");
 secs.forEach(function(s){s.classList.add("reveal")});
 if("IntersectionObserver" in window){
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+ var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.intersectionRatio >= 0.12){
+        e.target.classList.add("in");
+      }else if(e.intersectionRatio <= 0){
+        e.target.classList.remove("in");
+      }
+    })
+  },{threshold:[0, 0.12]});;
  secs.forEach(function(s){io.observe(s)});
 }else{secs.forEach(function(s){s.classList.add("in")})}
 

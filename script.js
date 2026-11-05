@@ -44,7 +44,7 @@ function choose(id,go){
  sel=id;chosen=id;
  var r=document.querySelector('input[name=pkg][value='+id+']');if(r)r.checked=true;
  calc();setEvent();drawSvcs();
- if(go){toast("You selected "+byId(id).n);$("#estimate").scrollIntoView({behavior:RM?"auto":"smooth",block:"start"})}
+ if(go){var q=$(".quote");q.classList.remove("slide");void q.offsetWidth;q.classList.add("slide");toast("You selected "+byId(id).n);$("#estimate").scrollIntoView({behavior:RM?"auto":"smooth",block:"start"})}
 }
 document.querySelectorAll('input[name=pkg]').forEach(function(r){r.addEventListener("change",function(){choose(r.value,false)})});
 $("#plus").onclick=function(){hrs=Math.min(24,hrs+1);calc()};
@@ -90,8 +90,8 @@ document.querySelectorAll("nav a").forEach(function(a){a.addEventListener("click
 
 /* dark and light mode */
 var tb=$("#theme");
-var SUN='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
-var MOON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+var SUN='<svg width="20" height="20" aria-hidden="true"><use href="#i-sun"/></svg>';
+var MOON='<svg width="20" height="20" aria-hidden="true"><use href="#i-moon"/></svg>';
 function curTheme(){return document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}
 function paintTheme(){var dk=curTheme()==="dark";tb.innerHTML=dk?SUN:MOON;tb.setAttribute("aria-label",dk?"Switch to light mode":"Switch to dark mode")}
 tb.onclick=function(){var nx=curTheme()==="dark"?"light":"dark";document.documentElement.dataset.theme=nx;try{localStorage.setItem("wz-theme",nx)}catch(e){}paintTheme()};
@@ -104,3 +104,6 @@ if("IntersectionObserver" in window){
  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
  secs.forEach(function(s){io.observe(s)});
 }else{secs.forEach(function(s){s.classList.add("in")})}
+
+/* social links not ready yet */
+document.querySelectorAll("a[data-soon]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();toast("Our "+a.dataset.soon+" link is coming soon")})});

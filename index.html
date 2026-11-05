@@ -30,8 +30,8 @@
    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
   <nav id="nav">
-   <a href="#top">Home</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#about">About</a><a href="#join">Join us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-   <a class="btn gold" href="#book" style="color:#1c1400;padding:9px 18px">Book team</a>
+   <a href="#top">Home</a><a href="#services">Services</a><a href="#book">Book team</a><a href="#how">How it works</a><a href="#join">Join us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+   
   </nav>
   <div class="hright">
    <a class="logo" href="#top" aria-label="Wazing home"><img src="wazing-logo-mark.png" alt="Wazing logo" height="40"></a>
@@ -66,7 +66,7 @@
 
 <section id="estimate">
  <div class="wrap">
-  <h2>Your estimate</h2>
+  <h2>Prices </h2>
   <p class="lead">Select a service above and its price appears here before you book. You can also change the service below.</p>
    <div class="card quote" aria-labelledby="qt">
     <h3 id="qt">Get a quick estimate</h3>
@@ -82,6 +82,32 @@
  </div>
 </section>
 
+
+<section id="book" style="border-top:1px solid var(--line)">
+  <div class="wrap two">
+   <div>
+    <h2>Book your ushers</h2>
+    <p class="lead">Fill in the details and we will confirm your booking. Try it: this demo shows you the confirmation and prepares a WhatsApp message.</p>
+    <div class="ok" id="ok" role="status" aria-live="polite">
+     <b id="okTitle"></b>
+     <p id="okText" style="margin:6px 0 12px"></p>
+     <a class="btn" id="wa" target="_blank" rel="noopener">Send on WhatsApp</a>
+    </div>
+   </div>
+   <form class="card" id="form">
+    <div class="fgrid">
+     <label>Your name<input type="text" id="name" required autocomplete="name"></label>
+     <label>Phone number<input type="tel" id="phone" required autocomplete="tel" placeholder="07XX XXX XXX"></label>
+     <label>Event type<select id="etype"></select></label>
+     <label>Event date<input type="date" id="date" required></label>
+     <label>Venue or town<input type="text" id="venue" required></label>
+     <label>Number of guests<input type="number" id="guests" min="1" placeholder="e.g. 150"></label>
+    </div>
+    <label>Anything else we should know?<textarea id="msg" rows="3"></textarea></label>
+    <button class="btn" type="submit" style="width:100%">Send booking request</button>
+   </form>
+  </div>
+</section>
 <section id="how" style="background:var(--soft)">
  <div class="wrap">
   <h2>How it works</h2>
@@ -130,31 +156,6 @@
  </div>
 </section>
 
-<section id="book">
- <div class="wrap two">
-  <div>
-   <h2>Book your ushers</h2>
-   <p class="lead">Fill in the details and we will confirm your booking. Try it: this demo shows you the confirmation and prepares a WhatsApp message.</p>
-   <div class="ok" id="ok" role="status" aria-live="polite">
-    <b id="okTitle"></b>
-    <p id="okText" style="margin:6px 0 12px"></p>
-    <a class="btn" id="wa" target="_blank" rel="noopener">Send on WhatsApp</a>
-   </div>
-  </div>
-  <form class="card" id="form">
-   <div class="fgrid">
-    <label>Your name<input type="text" id="name" required autocomplete="name"></label>
-    <label>Phone number<input type="tel" id="phone" required autocomplete="tel" placeholder="07XX XXX XXX"></label>
-    <label>Event type<select id="etype"></select></label>
-    <label>Event date<input type="date" id="date" required></label>
-    <label>Venue or town<input type="text" id="venue" required></label>
-    <label>Number of guests<input type="number" id="guests" min="1" placeholder="e.g. 150"></label>
-   </div>
-   <label>Anything else we should know?<textarea id="msg" rows="3"></textarea></label>
-   <button class="btn" type="submit" style="width:100%">Send booking request</button>
-  </form>
- </div>
-</section>
 
 <section id="join" style="background:var(--soft)">
  <div class="wrap two">
@@ -205,7 +206,7 @@
   <div class="card ct"><h3>Email</h3><div class="acts">
     <a class="act" href="mailto:wazingushering254@gmail.com" aria-label="Email Wazing"><span class="ic mail"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>wazingushering254@gmail.com</a>
    </div></div>
-  <div class="card ct soc"><h3>Social media</h3><div class="subs">
+  <div class="card ct soc"><h3>Social media platforms</h3><div class="subs">
     <!-- TODO: replace with real Instagram URL -->
     <a class="sub" href="#" data-soon="Instagram" aria-label="Wazing on Instagram"><span class="ic ig"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>Instagram</a>
     <!-- TODO: replace with real TikTok URL -->
